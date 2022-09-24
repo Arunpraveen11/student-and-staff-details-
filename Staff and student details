@@ -1,0 +1,186 @@
+import java.util.*;
+public class Swich {
+	
+	//global declaration
+	public static int ch;
+	 
+	    Scanner ob = new Scanner(System.in);
+	    String[] Name = new String[ch+1];
+	    String[] dept = new String[ch+1];
+	    int[] Roll_no = new int[ch+1];
+	    //int ch ;
+	 
+	//Menu display function
+	
+	 public void menu(int choise)
+	   {
+		 Swich ob3 = new Swich();
+		 while(choise != 0)
+       {
+   	    switch(choise)
+   	      {
+   	        case  1:
+   	        	ob3.student();
+   	        	break;
+   	        case  2:
+   	        	ob3.staff();
+   	        	break;
+   	        case 3:
+   	            System.out.println("Thank you For using this program!!!");
+   	        	System.exit(choise);
+   	        	break;
+   	      }
+       }
+	   }
+	
+	//getting user input
+	 public void insert()
+	    {
+		  //System.out.println("You can maximun only Enter 10 members profile only...");
+		 
+		  //if(ch<=10)
+		  // {
+		  //Swich ob4 = new Swich();
+		  
+         //ob4.insert();
+          
+          for(int i=1;i<=ch;i++)
+		        {
+		           System.out.println("Enter your name:");
+		           Name[i] = ob.next();
+		           System.out.println("Enter your dept: ");
+		           dept[i] = ob.next();
+		           System.out.println("Enter your Id_no:");
+		           Roll_no[i] = ob.nextInt();
+		        }
+		  // }
+		/*  else
+			  System.out.println("You can only enter maximum of 10 members. Soory!!!");*/
+	    }
+	
+	//disply enterd input
+	public void disply()
+	    {
+		    for(int i=1;i<=ch;i++)
+		      {
+		        System.out.println("Member " + i);
+		    	System.out.println(" your Name= " + Name[i]  );
+		        System.out.println(" your dept " + dept[i]);
+		        System.out.println(" your Id_no = " + Roll_no[i]);
+		        System.out.println("-------------------------------------");
+		      }
+		}
+	//student function
+	public void student()
+	{
+	    Swich ob2 = new Swich();
+	// System.out.println("1.insert ---- 2.disply ----- 3.exit");		  
+        int choise = 1;
+        Scanner ob1 = new Scanner(System.in);
+     
+     
+        while(choise !=0 )
+             {
+    	        System.out.println("1.insert ---- 2.disply ----- 3.exit");	
+    	        System.out.println("Enter your chose:");
+                choise = ob1.nextInt();
+    	            switch (choise)
+                       { 
+                          case 1:
+                             ob2.insert();
+                             break;
+                          
+                          case 2:
+                	         ob2.disply();
+                	         break;
+                          
+                          case 3:
+                	         System.out.println("Thank you !!!"); 
+                             //System.exit(choise);
+                	        int choise1 = 1;
+              		       System.out.println("1.student 2.staff 3.exit");
+              		       System.out.println("Enter your chose:");
+                             choise1 = ob1.nextInt();
+                             
+                	         ob2.menu(choise1);
+                             break;
+                          default:
+                        	  System.out.println("Enter correct value");
+                     
+                       }  }   
+          
+             
+             }
+	//staff function 
+	public void staff()
+	 {
+ 	    Swich ob2 = new Swich();
+ 	// System.out.println("1.insert ---- 2.disply ----- 3.exit");		  
+         int choise = 1;
+         Scanner ob1 = new Scanner(System.in);
+      
+      
+         while(choise !=0 )
+              {
+     	        System.out.println("1.insert ---- 2.disply ----- 3.exit");	
+     	        System.out.println("Enter your chose:");
+	                choise = ob1.nextInt();
+     	            switch (choise)
+                        { 
+                           case 1:
+                              ob2.insert();
+                              break;
+                           
+                           case 2:
+                 	         ob2.disply();
+                 	         break;
+                           
+                           case 3:
+                 	         System.out.println("Thank you !!!"); 
+                              //System.exit(choise);
+                 	        int choise1 = 1;
+             		       System.out.println("1.student 2.staff 3.exit");
+             		       System.out.println("Enter your chose:");
+                            choise1 = ob1.nextInt();
+                            
+                 	         ob2.menu(choise1);
+                 	          break;
+                           default:
+                         	  System.out.println("Enter correct value");
+                      
+                        } }
+            
+           
+              
+              }  
+	
+      
+
+     
+
+		 
+	    
+	
+	//main funtion
+	
+	public static void main(String args[])
+	         {         
+		       Swich ob3 = new Swich();
+		       Scanner ob1 = new Scanner(System.in);
+		       int choise = 1;
+		       
+		       System.out.println("1.student 2.staff 3.exit");
+		       System.out.println("Enter your choose:");
+               choise = ob1.nextInt();
+               //getting number member details
+               Scanner ob4 = new Scanner(System.in);
+     		   System.out.println("Enter how many member details do you want to enter:");
+                ch = ob4.nextInt();
+	            //calling menu function 
+               ob3.menu(choise);
+	            
+	         }
+	     
+	
+
+}
